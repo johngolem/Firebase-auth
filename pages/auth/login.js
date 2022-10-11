@@ -1,8 +1,20 @@
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { GoogleAuthProvider, signInwithPopup } from "firebase/auth";
+import {auth} from "../../utils/firebase";
 
 export default function Login() {
+  //Sign in with google
+
+  const googleProvider = new GoogleAuthProvider();
+  const GoogleLogin = async () => {
+    try {
+      const result = await signInwithPopup(auth, googleProvider);
+      console.log(result.user);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="shadow-xl mt-32 p-10 text-gray-700 rounded-lg">
       <h2 className="text-3xl font-medium">Join Today</h2>
