@@ -2,6 +2,8 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../utils/firebase";
+// import {useAuthState} from 'react-firebase-hooks'
+
 
 export default function Login() {
   //Sign in with google
